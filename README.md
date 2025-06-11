@@ -1,131 +1,30 @@
-# Brute Force Hunting Lab: Microsoft Defender for Endpoint (MDE)
+# 🛡️ Threat Hunting Report: Internet-Exposed VM in Shared Services Cluster
 
-## 1. 🧭 Preparation
+## 📌 Scenario
 
-**Goal:** Set up the hunt by defining what you're looking for.
+During routine maintenance, the security team was tasked with investigating any virtual machines (VMs) in the **shared services cluster** (handling DNS, DHCP, Domain Services, etc.) that may have been mistakenly exposed to the public internet. These VMs could be subject to **external brute-force login attempts**, potentially leading to **lateral movement** within the network.
 
-During routine maintenance, the security team was asked to review VMs in the shared services cluster (DNS, Domain Services, DHCP, etc.) to identify any misconfigured or publicly exposed VMs. The mission: detect brute-force login attempts or successful compromises.
-
-> **Hypothesis Example:**
-> "Older VMs without account lockout policies may have been brute-forced while exposed to the public internet."
+> **Hypothesis**: Misconfigured VMs might be internet-facing and exposed to brute-force login attempts. Some may lack account lockout policies, allowing repeated logon attempts and possible unauthorized access.
 
 ---
 
-## 2. 📥 Data Collection
+## 🖥️ Virtual Machine Selection
 
-**Goal:** Gather logs from key data sources.
-
-Look into:
-
-* Which devices were exposed to the internet?
-* Which received excessive failed login attempts?
-* Source IP addresses and volume of login failures
-
-**Key Log Tables:**
-
-* `DeviceInfo`
-* `DeviceLogonEvents`
+- **VM chosen**: `windows-target-1`
+- **Rationale**: This honeypot VM is always-on and more exposed than the user-onboarded MDE VM, providing richer data for analysis.
 
 ---
 
-## 3. 📊 Data Analysis
+## 1️⃣ Preparation
 
-**Goal:** Test your hypothesis using logs and tools.
-
-Look for anomalies or Indicators of Compromise (IOCs):
-
-* Patterns of repeated failed logins
-* Any successful logins after multiple failures?
-
-> **Tip:** If a brute force attack succeeded, check what else happened around that time.
+- **Lateral Movement**: Movement by an attacker from one system/account to another to escalate privileges or deploy malware (e.g. ransomware).
+- **Attack Surface**: VMs exposed to the internet without proper restrictions may allow attackers to brute-force credentials.
 
 ---
 
-## 4. 🕵️ Investigation
+## 2️⃣ Data Collection
 
-**Goal:** Investigate suspicious events.
-
-Dig deeper:
-
-* What was accessed?
-* Does it match any known TTPs in the [MITRE ATT\&CK Framework](https://attack.mitre.org)?
-
-> Use ChatGPT to analyze logs or summarize activity using uploaded or pasted content.
-
----
-
-## 5. 🛡️ Response
-
-**Goal:** Mitigate confirmed threats.
-
-Take action:
-
-* Coordinate with your security team
-* Contain and remove threats
-* Begin recovery
-
----
-
-## 6. 📝 Documentation
-
-**Goal:** Record findings and improve future response.
-
-* Document what you found
-* Include log sources, queries, indicators, and actions taken
-
----
-
-## 7. 🔄 Improvement
-
-**Goal:** Enhance your detection and response capabilities.
-
-Reflect on:
-
-* What could’ve prevented the incident?
-* What tools/methods worked or didn’t?
-* What changes should be made to your hunting playbook?
-
----
-
-## 💡 Sample Queries (Spoilers — highlight or copy to reveal)
-
-```kql
-// Top IPs by failed logons
-DeviceLogonEvents
-| where LogonType has_any("Network", "Interactive", "RemoteInteractive", "Unlock")
-| where ActionType == "LogonFailed"
-| where isnotempty(RemoteIP)
-| summarize Attempts = count() by RemoteIP, DeviceName
-| order by Attempts desc
-```
-
-```kql
-// Check if any of top failed IPs succeeded
-let RemoteIPsInQuestion = dynamic(["119.42.115.235","183.81.169.238", "74.39.190.50"]);
-DeviceLogonEvents
-| where LogonType has_any("Network", "Interactive")
-| where ActionType == "LogonSuccess"
-| where RemoteIP has_any(RemoteIPsInQuestion)
-```
-
-```kql
-// Detect brute force success
-let FailedLogons = DeviceLogonEvents
-| where ActionType == "LogonFailed" and isnotempty(RemoteIP)
-| summarize FailedLogonAttempts = count() by RemoteIP, DeviceName;
-let SuccessfulLogons = DeviceLogonEvents
-| where ActionType == "LogonSuccess" and isnotempty(RemoteIP)
-| summarize SuccessfulLogons = count() by RemoteIP, DeviceName, AccountName;
-FailedLogons
-| join kind=inner SuccessfulLogons on RemoteIP
-| project RemoteIP, DeviceName, FailedLogonAttempts, SuccessfulLogons, AccountName
-```
-
----
-
-## 🧾 Timeline Summary & Key Findings
-
-### 🖥️ Exposure
+**Check which devices were internet-facing:**
 
 ```kql
 DeviceInfo
@@ -134,30 +33,47 @@ DeviceInfo
 | order by Timestamp desc
 ```
 
-> Last observed internet exposure: **2025-06-10T13:22:47Z**
+> ✅ `windows-target-1` was internet-facing, with latest exposure at `2025-06-10T13:22:47.6039291Z`.
 
-### 🚫 Brute Force Attempts
+---
+
+## 3️⃣ Investigation of Failed Logins
+
+**KQL to find failed remote login attempts:**
 
 ```kql
 DeviceLogonEvents
 | where DeviceName == "windows-target-1"
+| where LogonType has_any("Network", "Interactive", "RemoteInteractive", "Unlock")
 | where ActionType == "LogonFailed"
+| where isnotempty(RemoteIP)
 | summarize Attempts = count() by RemoteIP
 | order by Attempts desc
 ```
 
-> Top 10 IPs had **no successful logons**:
+> 🔎 Multiple IPs (bad actors) repeatedly attempted to access the VM.
+
+---
+
+## 4️⃣ Investigation of Top Suspicious IPs
+
+**Check if any of the top 10 IPs had successful logins:**
 
 ```kql
-let RemoteIPsInQuestion = dynamic(["109.205.213.154", "185.39.19.71", "118.107.45.60"]);
+let RemoteIPsInQuestion = dynamic(["109.205.213.154", "185.39.19.71", "118.107.45.60", "216.71.169.10", "20.64.248.197", "36.67.203.90", "194.180.49.127", "45.61.132.124", "197.232.4.167", "50.188.96.138"]);
 DeviceLogonEvents
+| where LogonType has_any("Network", "Interactive", "RemoteInteractive", "Unlock")
 | where ActionType == "LogonSuccess"
 | where RemoteIP has_any(RemoteIPsInQuestion)
 ```
 
-> ✅ *Query returned no results*
+> ✅ **Result**: **No successful logins** from the top 10 suspicious IPs.
 
-### ✅ Valid Logins (Labuser Only)
+---
+
+## 5️⃣ Who Successfully Logged In?
+
+**Check successful logins on `windows-target-1`:**
 
 ```kql
 DeviceLogonEvents
@@ -168,53 +84,73 @@ DeviceLogonEvents
 | summarize count()
 ```
 
-> No brute force for `labuser` — all logins were valid and expected
+> ✅ Only the account `labuser` had successful logins (2 in total).
 
-### 🌍 Login Origin Check
+---
+
+## 6️⃣ Was `labuser` Brute-Forced?
 
 ```kql
 DeviceLogonEvents
 | where DeviceName == "windows-target-1"
+| where LogonType == "Network"
+| where ActionType == "LogonFailed"
 | where AccountName == "labuser"
-| summarize LoginCount = count() by RemoteIP
+| summarize count()
 ```
 
-> All login origins were normal — no anomalies detected.
+> ✅ **Result**: Zero (0) failed logins for `labuser`. No evidence of brute-force attempts.
 
 ---
 
-## 🧠 Mapped MITRE ATT\&CK TTPs
+## 7️⃣ Where Did `labuser` Log In From?
 
-### **Initial Access**
+```kql
+DeviceLogonEvents
+| where DeviceName == "windows-target-1"
+| where LogonType == "Network"
+| where ActionType == "LogonSuccess"
+| where AccountName == "labuser"
+| summarize LoginCount = count() by DeviceName, ActionType, AccountName, RemoteIP
+```
 
-* `T1078.001`: Valid Accounts — default account used (not compromised)
-* `T1133`: External Remote Services — public RDP access
-
-### **Credential Access**
-
-* `T1110.001`: Brute Force — password guessing attempts
-
-### **Reconnaissance (Implied)**
-
-* `T1595`: Active Scanning — inferred from behavior
+> 📍 Successful login originated from **Saitama, Japan**. This is assumed to be legitimate (e.g. lab user).
 
 ---
 
-## 🔐 Response Actions
+## ✅ Conclusion
 
-✅ Hardened NSG — restricted RDP to internal IPs only
-✅ Implemented account lockout policy
-✅ Enabled Multi-Factor Authentication (MFA)
-
----
-
-## 📚 Resources
-
-* [MITRE ATT\&CK Framework](https://attack.mitre.org)
-* [KQL Documentation](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
+- `windows-target-1` was confirmed to be **internet-facing**.
+- Multiple brute-force attempts were made by **unauthorized IPs**, but **no successful logins** occurred from those sources.
+- The only successful login was made by **`labuser`**, and there is **no evidence** that this account was brute-forced.
+- **No compromise** was detected on the VM at this time.
 
 ---
 
-**Author Note:** This lab was inspired by hands-on experience with Microsoft Defender for Endpoint threat hunting. Special thanks to Josh for permission to share this lab publicly.
+## 🔐 MITRE ATT&CK Mapping
 
-> 🛡️ Stay safe and happy hunting!
+| Technique        | ID      | Description                                                |
+|------------------|---------|------------------------------------------------------------|
+| Brute Force      | [T1110](https://attack.mitre.org/techniques/T1110/) | Repeated attempts to gain access by guessing credentials |
+| Valid Accounts   | [T1078](https://attack.mitre.org/techniques/T1078/) | Usage of valid accounts to maintain access               |
+| Remote Services  | [T1021](https://attack.mitre.org/techniques/T1021/) | Use of RDP/SMB to access other machines remotely         |
+| Lateral Movement | [T1080](https://attack.mitre.org/techniques/T1080/) | Propagation within the network once access is gained     |
+
+---
+
+## 🛠️ Recommended Mitigations
+
+- ⛔ Restrict inbound traffic to this VM via **Network Security Group (NSG)** rules.
+- 🔒 Implement **Account Lockout Policies** to prevent brute-force attacks.
+- 🔐 Enforce **Multi-Factor Authentication (MFA)** for all accounts, especially administrative.
+- 📉 Monitor with **Log Analytics** and **Microsoft Sentinel** for real-time threat detection.
+
+---
+
+## 📁 Notes
+
+- This threat hunting activity was performed in the **Microsoft 365 Defender portal** using **KQL queries** on the `windows-target-1` honeypot VM.
+- Screenshots and KQL outputs have been archived locally.
+- This report is part of my cybersecurity learning portfolio.
+
+> 📸 *[Optional: Insert screenshots using `![Alt text](path/to/screenshot.png)`]*
