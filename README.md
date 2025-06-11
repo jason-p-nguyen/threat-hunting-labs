@@ -9,9 +9,3 @@ Hey there! I'm **Jason P. Nguyen**, an aspiring cybersecurity analyst. Curious a
 ---
 Labs:
 
-
----
-
-_Thanks for visiting! Feel free to fork, test things out, or use this as a foundation for your own hunting projects._
-
-```
