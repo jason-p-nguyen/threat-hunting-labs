@@ -9,3 +9,4 @@ Hey there! I'm **Jason P. Nguyen**, an aspiring cybersecurity analyst. Curious a
 ---
 Labs:
 
+[Threat Hunting Report: Internet-exposed devices](Internet-exposed-devices.md)
