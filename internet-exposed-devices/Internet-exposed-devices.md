@@ -149,9 +149,11 @@ DeviceLogonEvents
 
 ## 📁 Notes
 
-- This threat hunting activity was performed in the **Microsoft 365 Defender portal** using **KQL queries** on the `windows-target-1` honeypot VM.
+- This threat hunting activity was performed in the **Microsoft Defender for Endpoint** using **KQL queries** on the `windows-target-1` honeypot VM.
 - Screenshots and KQL outputs have been archived locally.
 - This report is part of my cybersecurity learning portfolio from Josh Madakor's Cyber Range.
 
-> 📸 *[Optional: Insert screenshots using `![Alt text](path/to/screenshot.png)`]*
+---
+
+🔗 _[Return to Threat Hunting Portfolio Index](../README.md)_
 
