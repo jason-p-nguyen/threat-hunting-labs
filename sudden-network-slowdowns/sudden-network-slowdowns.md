@@ -17,7 +17,7 @@ DeviceNetworkEvents
 ```
 📝 **Observation**: High volume of failed connections from `10.0.0.133`, targeting itself and another internal host.
 
-> 📷 *[Insert screenshot of KQL results]*
+> [Connection failed.png](Connection failed.png
 
 ---
 
