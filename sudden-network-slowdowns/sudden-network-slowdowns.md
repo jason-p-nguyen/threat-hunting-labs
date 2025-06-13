@@ -82,14 +82,14 @@ DeviceProcessEvents
 
 ## 🧠 MITRE ATT&CK Mapping
 
-| Tactic               | Technique                                 | ID          | Description |
-|----------------------|-------------------------------------------|-------------|-------------|
-| Execution            | PowerShell                                | T1059.001   | Port scan script executed via PowerShell |
-| Execution / Priv. Esc.| Service Execution                        | T1569.002   | SYSTEM account used to run the script |
-| Discovery            | Network Service Discovery                 | T1046       | Targeted internal services using port scan |
-| Discovery            | Remote System Discovery                   | T1018       | Attempted to identify other hosts |
-| Discovery            | System Network Configuration Discovery    | T1016       | Likely goal of scanning activity |
-| Priv. Escalation     | Abuse Elevation Control Mechanism         | T1548.002   | SYSTEM-level execution suspicious (potential UAC bypass or service hijack) |
+| Technique                              | ID             | Description                                              |
+|----------------------------------------|----------------|----------------------------------------------------------|
+| PowerShell                             | [T1059.001](https://attack.mitre.org/techniques/T1059/001/) | Port scan script executed via PowerShell                |
+| Service Execution                      | [T1569.002](https://attack.mitre.org/techniques/T1569/002/) | SYSTEM account used to run the script                   |
+| Network Service Discovery              | [T1046](https://attack.mitre.org/techniques/T1046/)         | Targeted internal services using port scan              |
+| Remote System Discovery                | [T1018](https://attack.mitre.org/techniques/T1018/)         | Attempted to identify other hosts                       |
+| System Network Configuration Discovery | [T1016](https://attack.mitre.org/techniques/T1016/)         | Likely goal of scanning activity                        |
+| Abuse Elevation Control Mechanism      | [T1548.002](https://attack.mitre.org/techniques/T1548/002/) | SYSTEM-level execution suspicious (potential UAC bypass) |
 
 ---
 
