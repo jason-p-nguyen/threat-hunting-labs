@@ -53,6 +53,8 @@ DeviceLogonEvents
 
 > 🔎 Multiple IPs (bad actors) repeatedly attempted to access the VM.
 
+![LogonFailed](images/LogonFailed.png)
+
 ---
 
 ## 4️⃣ Investigation of Top Suspicious IPs
@@ -113,6 +115,7 @@ DeviceLogonEvents
 | where AccountName == "labuser"
 | summarize LoginCount = count() by DeviceName, ActionType, AccountName, RemoteIP
 ```
+![LogonSuccess](images/LogonSuccess.png)
 
 > 📍 Successful login originated from **Saitama, Japan**. This is assumed to be legitimate (e.g. lab user).
 
