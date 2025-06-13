@@ -1,5 +1,15 @@
 # 🛡️ Threat Hunt: Sudden Network Slowdowns – Port Scan Investigation
 
+**Author**: Jason Nguyen  
+**Date**: 👻 Friday 13th, June 2025 👻
+**Tools & Technologies Used**:
+- Microsoft Defender for Endpoint (MDE)
+- Microsoft Sentinel
+- Azure Log Analytics
+- KQL (Kusto Query Language)
+- PowerShell
+- GitHub (Markdown, Repo Management)
+
 ## 📅 Scenario Summary: 
 While investigating reports of **sudden internal network slowdowns**, I observed anomalous behavior from a Windows 10 VM (`j-win10`) including **several failed connection attempts** to internal hosts. Using Microsoft Defender for Endpoint (MDE) and KQL queries, I was able to trace the issue to an unexpected **PowerShell-based port scan** initiated by the SYSTEM account.
 
