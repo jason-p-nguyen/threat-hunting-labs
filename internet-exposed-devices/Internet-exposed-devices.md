@@ -1,5 +1,15 @@
 # 🛡️ Threat Hunting Report: Internet-Exposed VM in Shared Services Cluster
 
+**Author**: Jason Nguyen  
+**Date**: 11 June 2025
+**Tools & Technologies Used**:
+- Microsoft Azure 
+- Microsoft Defender for Endpoint (MDE)
+- Microsoft Sentinel
+- Azure Log Analytics
+- KQL (Kusto Query Language)
+- GitHub (Markdown, Repo Management)
+
 ## 📌 Scenario
 
 During routine maintenance, the security team was tasked with investigating any virtual machines (VMs) in the **shared services cluster** (handling DNS, DHCP, Domain Services, etc.) that may have been mistakenly exposed to the public internet. These VMs could be subject to **external brute-force login attempts**, potentially leading to **lateral movement** within the network.
