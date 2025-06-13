@@ -9,7 +9,7 @@ Welcome to my hands-on threat hunting portfolio. Each lab simulates a real-world
 ### 🌐 Internet-Exposed Devices  
 🛠️ Tools: MDE · Sentinel · KQL  
 🎯 Focus: External Exposure · Attack Surface Discovery  
-🧠 MITRE ATT&CK: T1046 · T1590.005  
+🧠 MITRE ATT&CK Techniques: T1046 · T1590.005  
 📅 Date: 2025-06-11  
 📄 [Read Full Report →](internet-exposed-devices/Internet-exposed-devices.md)
 
@@ -18,7 +18,7 @@ Welcome to my hands-on threat hunting portfolio. Each lab simulates a real-world
 ### 🚨 Sudden Network Slowdowns  
 🛠️ Tools: MDE · Sentinel · PowerShell · KQL  
 🎯 Focus: Internal Reconnaissance · Port Scanning  
-🧠 MITRE ATT&CK: T1059.001 · T1046 · T1016 · T1569.002 · T1018  
+🧠 MITRE ATT&CK Techniques: T1059.001 · T1046 · T1016 · T1569.002 · T1018  
 📅 Date: 2025-06-13  
 📄 [Read Full Report →](sudden-network-slowdowns/sudden-network-slowdowns.md)
 
