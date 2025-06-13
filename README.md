@@ -9,4 +9,6 @@ Hey there! I'm **Jason P. Nguyen**, an aspiring cybersecurity analyst. Curious a
 ---
 Labs:
 
-[Threat Hunting Report: Internet-exposed devices](https://github.com/jason-p-nguyen/threat-hunting-labs/blob/main/internet-exposed-devices/Internet-exposed-devices.md)
+[Threat Hunting Report: Internet-exposed devices](internet-exposed-devices/Internet-exposed-devices.md)
+
+[Threat Hunting Report: Sudden Network Slowdowns](sudden-network-slowdowns/sudden-network-slowdowns.md)
