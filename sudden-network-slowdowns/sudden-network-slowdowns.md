@@ -17,7 +17,7 @@ DeviceNetworkEvents
 ```
 📝 **Observation**: High volume of failed connections from `10.0.0.133`, targeting itself and another internal host.
 
-![Failed Connections](sudden-network-slowdowns/images/Connection-failed.png)
+![Failed Connections](images/Connection-failed.png)
 
 ---
 
@@ -45,14 +45,14 @@ DeviceProcessEvents
 ```
 📝 **Finding**: A script named `portscan.ps1` was executed via `powershell.exe`.
 
-> 📷 *[Insert screenshot of PowerShell event]*
+![powershell exe found](images/powershell-exe-found.png)
 
 ---
 
 ### 4️⃣ Manual Inspection: Confirming Malicious Script
 Logged into the host and confirmed presence of the following script:
 
-> 📷 *[Insert image of portscan.ps1 content]*
+![Portscan.ps1 file](images/portscan-ps1-file-found.png)
 
 ---
 
@@ -67,9 +67,9 @@ DeviceProcessEvents
 ```
 📝 **Red Flag**: The script was run by the `SYSTEM` account—**not expected** and not admin-configured.
 
-> 📷 *[Screenshot of SYSTEM account running the scan]*  
-> 📷 *[Proof of device isolation]*  
-> 📷 *[Proof of antivirus scan]*
+![PowerShell script run by system](images/powershell-script-system.png)
+![Device Isolated](images/device-Isolation.png)
+![Antivirus Scann](images/antivirus-scan.png)
 
 ---
 
