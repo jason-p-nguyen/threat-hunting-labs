@@ -17,7 +17,7 @@ DeviceNetworkEvents
 ```
 📝 **Observation**: High volume of failed connections from `10.0.0.133`, targeting itself and another internal host.
 
-> [Connection failed.png](Connection failed.png
+![Failed Connections](sudden-network-slowdowns/images/Connection failed.png)
 
 ---
 
