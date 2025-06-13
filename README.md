@@ -4,6 +4,13 @@ Welcome to my hands-on threat hunting portfolio. Each lab simulates a real-world
 
 ---
 
+### About Me 👋
+
+I’m Jason. I’m learning threat hunting by getting hands-on with real situations. I’m not an expert yet, but I’m curious and committed to figuring things out step by step. This portfolio shows what I’ve worked on so far and where I’m headed.
+
+
+---
+
 ## 📁 Scenarios
 
 ### 🌐 Internet-Exposed Devices  
