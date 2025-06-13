@@ -1,4 +1,4 @@
-# 🐺 Jason Nguyen – Threat Hunting Labs
+# 🦉 Jason Nguyen – Threat Hunting Labs
 
 Welcome to my hands-on threat hunting portfolio. Each lab simulates a real-world incident scenario and showcases investigative methods using Microsoft Defender for Endpoint, Sentinel, and KQL.
 
