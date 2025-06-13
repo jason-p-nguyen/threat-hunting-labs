@@ -102,10 +102,13 @@ DeviceProcessEvents
 
 ---
 
-🔗 _[Return to Threat Hunting Portfolio Index](../README.md)_
+## 📁 Notes
 
-```
+- This threat hunting activity was performed in the **Microsoft Defender for Endpoint** using **KQL queries** on the `j-win10` Microsoft Azure VM.
+- Screenshots and KQL outputs have been archived locally.
+- This report is part of my cybersecurity learning portfolio from Josh Madakor's Cyber Range.
 
 ---
 
-Let me know if you'd like this converted into an `.md` file or auto-generated into a complete portfolio layout. You’re building excellent analyst skills!
+🔗 _[Return to Threat Hunting Portfolio Index](../README.md)_
+
