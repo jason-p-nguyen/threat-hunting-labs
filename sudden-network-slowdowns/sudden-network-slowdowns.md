@@ -2,6 +2,7 @@
 
 **Author**: Jason Nguyen  
 **Date**: 👻 Friday 13th, June 2025 👻
+
 **Tools & Technologies Used**:
 - Microsoft Azure
 - Microsoft Defender for Endpoint (MDE)
