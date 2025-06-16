@@ -18,6 +18,15 @@ During routine threat hunting activity using Microsoft Defender for Endpoint (MD
 
 ---
 
+## 🔎 Context
+An employee named John Doe, who works in a sensitive department, was recently placed on a Performance Improvement Plan (PIP) following behavioral issues. After an emotional outburst, management grew concerned that John might attempt to steal proprietary data before resigning.
+
+You have been tasked with investigating John’s corporate device (windows-target-1) using Microsoft Defender for Endpoint (MDE) to identify any suspicious behavior.
+
+John has administrator privileges and no restrictions on software use, raising the possibility that he could archive sensitive files and exfiltrate them to an external location such as a private cloud or remote server.
+
+---
+
 ## 🗂️ Investigation Steps
 
 ### 🔍 Step 1: Searching for ZIP File Creation Events
