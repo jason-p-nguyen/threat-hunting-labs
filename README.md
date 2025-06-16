@@ -31,6 +31,13 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 
 ---
 
+### 🗃️ Suspected Data Exfiltration  
+🛠️ Tools: MDE · KQL  
+🎯 Focus: Insider Threat · Data Staging · Exfiltration  
+🧠 MITRE ATT&CK Techniques: T1059.001 · T1218.011 · T1053 · T1560.001 · T1074.001 · T1048.003  
+📅 Date: 2025-06-16  
+📄 [Read Full Report →](suspected-data-exfiltration/suspected-data-exfiltration.md)
+
 ## 🧰 Tools Used
 
 - ☁️ Microsoft Azure
