@@ -2,6 +2,18 @@
 
 # Threat Hunting: Suspicious Use of 7-Zip and Possible Data Exfiltration
 
+**Author**: Jason Nguyen  
+**Date**: 16 June 2025
+
+**Tools & Technologies Used**:
+- Microsoft Azure
+- Microsoft Defender for Endpoint (MDE)
+- Microsoft Sentinel
+- Azure Log Analytics
+- KQL (Kusto Query Language)
+- PowerShell
+- GitHub (Markdown, Repo Management)
+
 ## 🕵️ Summary
 
 During routine threat hunting activity using Microsoft Defender for Endpoint (MDE), I detected suspicious file archiving behavior followed by possible data exfiltration. PowerShell was used to silently install 7-Zip, which was then used to compress employee data. Shortly afterward, the archive appeared to be staged in a “back up” folder and a network connection to an external URL was observed. This may indicate unauthorized data exfiltration.
