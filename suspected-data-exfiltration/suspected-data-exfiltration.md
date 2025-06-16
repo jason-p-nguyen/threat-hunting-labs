@@ -19,7 +19,7 @@ During routine threat hunting activity using Microsoft Defender for Endpoint (MD
 ---
 
 ## 🔎 Context
-An employee named John Doe, who works in a sensitive department, was recently placed on a Performance Improvement Plan (PIP) following behavioral issues. After an emotional outburst, management grew concerned that John might attempt to steal proprietary data before resigning.
+An employee named John Doe, who works in a sensitive department, was recently placed on a Performance Improvement Plan (PIP) following behavioral issues. After an disruptive incident, management grew concerned that John might attempt to steal proprietary data before resigning.
 
 You have been tasked with investigating John’s corporate device (windows-target-1) using Microsoft Defender for Endpoint (MDE) to identify any suspicious behavior.
 
