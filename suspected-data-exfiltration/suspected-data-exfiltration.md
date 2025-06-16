@@ -6,8 +6,6 @@
 **Tools & Technologies Used**:
 - Microsoft Azure
 - Microsoft Defender for Endpoint (MDE)
-- Microsoft Sentinel
-- Azure Log Analytics
 - KQL (Kusto Query Language)
 - PowerShell
 - GitHub (Markdown, Repo Management)
