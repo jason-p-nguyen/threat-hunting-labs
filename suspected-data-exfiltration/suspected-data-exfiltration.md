@@ -33,6 +33,8 @@ DeviceFileEvents
 | order by Timestamp desc
 ````
 
+![DeviceFileEvents](images/devicefileevents.png)
+
 This showed multiple zip files being created and moved to a suspiciously named folder (“back up”).
 
 ---
@@ -50,6 +52,7 @@ DeviceProcessEvents
 | order by Timestamp desc
 | project Timestamp, DeviceName, ActionType, ProcessCommandLine
 ```
+![DeviceProcessEvents](images/deviceprocessevents.png)
 
 This revealed that PowerShell silently installed 7-Zip and subsequently used it to archive sensitive employee data.
 
@@ -68,6 +71,7 @@ DeviceNetworkEvents
 | order by Timestamp desc
 | project Timestamp, DeviceName, ActionType, RemoteIP, RemoteUrl, InitiatingProcessCommandLine
 ```
+![DeviceNetworkEvents](images/devicenetworkevents.png)
 
 A successful connection to an external URL was found, suggesting the archived file may have been exfiltrated from the environment. The script used to build this lab confirmed that exfiltration was part of the intended behavior.
 
@@ -104,3 +108,5 @@ Awaiting further instructions from management.
 
 * If not for reviewing the lab environment’s script, I may have missed the significance of the `RemoteUrl` field — this helped confirm data was sent externally.
 * This investigation emphasized the importance of correlating **file events**, **process activity**, and **network logs** with a clear timeline.
+* Screenshots and KQL outputs have been archived locally.
+* This report is part of my cybersecurity learning portfolio from Josh Madakor's Cyber Range.
