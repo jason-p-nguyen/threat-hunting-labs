@@ -38,6 +38,8 @@ DeviceFileEvents
 | project Timestamp, DeviceName, FolderPath, ActionType, InitiatingProcessCommandLine
 ````
 
+![DeviceFileEvents](images/DeviceFileEvents.png)
+
 **Findings:**
 
 * Encrypted files with `.pwncrypt` extensions were found.
@@ -60,6 +62,8 @@ DeviceProcessEvents
 | order by Timestamp desc
 | project Timestamp, DeviceName, ActionType, FileName, ProcessCommandLine
 ```
+
+![DeviceProcessEvents](images/DeviceProcessEvents.png)
 
 **Malicious Command Identified:**
 
