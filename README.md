@@ -14,7 +14,7 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 ## 📁 Scenarios
 
 ### 🌐 Internet-Exposed Devices  
-🛠️ Tools: MDE · Sentinel · KQL  
+🛠️ Tools: MDE · Sentinel · KQL · Azure
 🎯 Focus: External Exposure · Attack Surface Discovery  
 🧠 MITRE ATT&CK Techniques: T1046 · T1590.005  
 📅 Date: 2025-06-11  
@@ -23,7 +23,7 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 ---
 
 ### 🚨 Sudden Network Slowdowns  
-🛠️ Tools: MDE · Sentinel · PowerShell · KQL  
+🛠️ Tools: MDE · Sentinel · PowerShell · KQL · Azure
 🎯 Focus: Internal Reconnaissance · Port Scanning  
 🧠 MITRE ATT&CK Techniques: T1059.001 · T1046 · T1016 · T1569.002 · T1018  
 📅 Date: 2025-06-13  
@@ -32,11 +32,20 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 ---
 
 ### 🗃️ Suspected Data Exfiltration  
-🛠️ Tools: MDE · KQL  
+🛠️ Tools: MDE · KQL · Azure
 🎯 Focus: Insider Threat · Data Staging · Exfiltration  
 🧠 MITRE ATT&CK Techniques: T1059.001 · T1218.011 · T1053 · T1560.001 · T1074.001 · T1048.003  
 📅 Date: 2025-06-16  
 📄 [Read Full Report →](suspected-data-exfiltration/suspected-data-exfiltration.md)
+
+---
+
+### Zero-Day Ransomware (PwnCrypt) Outbreak
+🛠️ Tools: MDE · KQL · Azure · PowerShell
+🎯 Focus: Ransomware · Threat Hunting · Incident Response   
+🧠 MITRE ATT&CK Techniques: T1059.001 · T1059.003 · T1562.001 · T1119 · T1486 · T1105
+📅 Date: 2025-06-17  
+📄 [Read Full Report →](pwncrypt-ransomware/pwncrypt-ransomware.md)
 
 ## 🧰 Tools Used
 
