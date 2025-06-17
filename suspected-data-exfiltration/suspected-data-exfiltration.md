@@ -1,4 +1,4 @@
-#🛡️ Threat Hunting: Suspicious Use of 7-Zip and Possible Data Exfiltration
+# 🛡️ Threat Hunting: Suspicious Use of 7-Zip and Possible Data Exfiltration
 
 **Author**: Jason Nguyen  
 **Date**: 16 June 2025
