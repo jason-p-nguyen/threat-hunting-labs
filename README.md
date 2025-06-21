@@ -53,7 +53,7 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 
 🛠️ **Tools**: Microsoft Defender for Endpoint (MDE) · Microsoft Sentinel · KQL · Azure VM · Log Analytics  
 🎯 **Focus**: Threat Hunting · Endpoint Telemetry Analysis · Suspicious File & Process Detection · Timeline Reconstruction  
-🧠 **MITRE ATT&CK Techniques**: T1059 (Command and Scripting Interpreter) · T1036 (Masquerading) · T1204 (User Execution)  
+🧠 **MITRE ATT&CK Techniques**: T1059 · T1036 · T1204  
 📅 **Date**: 2025-06-21  
 📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-project/blob/main/README.md)**
 
