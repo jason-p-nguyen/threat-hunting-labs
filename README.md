@@ -47,6 +47,17 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 📅 Date: 2025-06-17  
 📄 [Read Full Report →](pwncrypt-ransomware/pwncrypt-ransomware.md)
 
+---
+
+## 🕵️ Threat Hunting Project: Tor Browser Activity Detection in Microsoft Defender
+
+🛠️ **Tools**: Microsoft Defender for Endpoint (MDE) · Microsoft Sentinel · KQL · Azure VM · Log Analytics  
+🎯 **Focus**: Threat Hunting · Endpoint Telemetry Analysis · Suspicious File & Process Detection · Timeline Reconstruction  
+🧠 **MITRE ATT&CK Techniques**: T1059 (Command and Scripting Interpreter) · T1036 (Masquerading) · T1204 (User Execution)  
+📅 **Date**: 2025-06-21  
+📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-project/blob/main/README.md)**
+
+
 ## 🧰 Tools Used
 
 - ☁️ Microsoft Azure
