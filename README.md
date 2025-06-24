@@ -57,6 +57,7 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 📅 **Date**: 2025-06-21  
 📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-project/blob/main/README.md)**
 
+---
 
 ## 🧰 Tools Used
 
@@ -68,6 +69,13 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 - 🧑‍💻 PowerShell  
 - 🗃️ GitHub for portfolio version control
 
+---
+
+## 💡 Threat Hunt Ideas
+
+A running list of threat hunting scenarios to explore, simulate, or build projects around. Based on real-world techniques, malware behavior, and threat actor tactics.
+
+**[See My List →](threat-hunt-ideas.md)**
 
 ---
 
