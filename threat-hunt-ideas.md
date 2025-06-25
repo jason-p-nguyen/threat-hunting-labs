@@ -72,8 +72,6 @@ A running list of threat hunting scenarios to explore, simulate, or build projec
 - **Bug Bounty Writeup Replication**  
   Recreate and hunt real findings from public bug bounty disclosures.
 
-## 🧪 Threat Hunt & Lab Ideas (Darknet Diaries Inspired)
-
 - **DDoS Tools – LOIC / HOIC Simulation**  
   Explore how simple tools like Low Orbit Ion Cannon (LOIC) can flood a target. Investigate how your own lab network handles packet floods (lab only, never against real-world targets).
 
