@@ -102,6 +102,30 @@ A running list of threat hunting scenarios to explore, simulate, or build projec
 - **Home Network Privacy – Who’s Phoning Home?**  
   Monitor outbound traffic from your router or devices to detect phone-home behavior (e.g., smart TVs, phones, or assistants). Can be used to spot unexpected connections or trackers.
 
+- **Fileless PowerShell Execution Detection**  
+Hunt for PowerShell scripts executed directly in memory using `IEX`, `DownloadString`, or `-EncodedCommand`. These are common techniques used in fileless malware to avoid writing to disk.
+
+- **LOLBins Abuse – Living off the Land Detection**  
+Detect suspicious use of trusted Windows binaries like `certutil.exe`, `mshta.exe`, and `regsvr32.exe`, often leveraged by attackers to download, execute, or run scripts stealthily.
+
+- **Memory Injection via Process Hollowing**  
+Identify behavior where a legitimate process is launched, its memory is hollowed out, and replaced with malicious code. Useful for detecting payload delivery methods used by Cobalt Strike or Mimikatz.
+
+- **Malicious Office Macro Execution Chains**  
+Monitor for Office applications (e.g., `winword.exe`, `excel.exe`) spawning unusual child processes like `powershell.exe` or `cmd.exe`, signaling potential macro-based initial access.
+
+- **Sentinel Workbook – Fileless Attack Dashboard**  
+Build a Microsoft Sentinel dashboard to visualize fileless and memory-based attack behaviors using custom KQL queries. Includes detection stats, geographic logins, and PowerShell trends.
+
+- **Simulated Fileless Malware Lab (Safe Testing)**  
+Create a controlled lab that runs harmless PowerShell payloads directly in memory. Use MDE or Sysmon to log and detect activity, mimicking attacker behavior in a safe environment.
+
+- **Attack Chain Timeline – Visualizing Fileless Techniques**  
+Document and visualize multi-stage fileless attacks using timeline diagrams (e.g., Mermaid.js) to show process chains, command execution, and memory manipulation stages.
+
+- **Sysmon Ruleset – Detecting In-Memory Execution**  
+Develop a custom Sysmon configuration to detect key in-memory attack behaviors like `CreateRemoteThread`, DLL injection, and command obfuscation. Visualize data in Sentinel or ELK.
+
 ---
 
 ## 🌐 Linux / Endpoint-Focused Scenarios
