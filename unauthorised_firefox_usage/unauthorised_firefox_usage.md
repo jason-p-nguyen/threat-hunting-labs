@@ -115,14 +115,17 @@ DeviceNetworkEvents
 
 * **Timestamp:** 2025-07-01T02:50:28Z
 * **Event:** File `uBlock0@raymondhill.net.xpi` created
+![ublock file](screenshots/6_ublock_file.png)
 * **Follow-up Connections:**
 
   * `172.66.44.77` (pages.dev)
+   ![ublock pages dev](screenshots/7_ublock_pages_dev.png)
   * `185.199.111.153` (github.io)
+   ![ublock github](screenshots/8_ublock_github.png)
 
-![ublock file](screenshots/6_ublock_file.png)
-![ublock pages dev](screenshots/7_ublock_pages_dev.png)
-![ublock github](screenshots/8_ublock_github.png)
+
+
+
 
 ### 4. Free Download Manager Activity
 
