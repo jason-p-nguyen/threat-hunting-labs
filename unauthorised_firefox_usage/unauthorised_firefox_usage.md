@@ -120,7 +120,9 @@ DeviceNetworkEvents
   * `172.66.44.77` (pages.dev)
   * `185.199.111.153` (github.io)
 
-![ublock ip addresses](coming soon)
+![ublock file](coming soon)
+![ublock pages dev](coming soon)
+![ublock github](coming soon)
 
 ### 4. Free Download Manager Activity
 
