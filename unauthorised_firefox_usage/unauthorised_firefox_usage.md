@@ -14,6 +14,8 @@
 
 Following a management directive triggered by cybersecurity alerts about increasing malware delivery through fake browser updates and malicious Firefox extensions, the cybersecurity team was tasked with identifying any unauthorized Firefox browser installations or browser extension activity across the organization's endpoints.
 
+[Step-by-step scenario creation](unauthorised_firefox_usage_scenario_creation.md)
+
 ### High-Level Firefox-Related IoC Discovery Plan
 
 * **Check `DeviceFileEvents`** for Firefox (`firefox.exe`) and FDM-related file activity
