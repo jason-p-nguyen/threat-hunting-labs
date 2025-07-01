@@ -39,6 +39,8 @@ DeviceFileEvents
 | project Timestamp, FileName, FolderPath, ActionType, InitiatingProcessCommandLine, SHA256
 ```
 
+![DeviceFileEvents](Coming Soon)
+
 **Key Findings:**
 
 * Detected: `Firefox Setup 140.0.2.exe`
@@ -61,6 +63,8 @@ DeviceProcessEvents
 | project Timestamp, FileName, FolderPath, ProcessCommandLine, SHA256
 ```
 
+![DeviceProcessEvents](Coming soon)
+
 **Key Findings:**
 
 * Firefox installed with command: `cmd.exe /c "Firefox Setup 140.0.2.exe /S"`
@@ -80,6 +84,8 @@ DeviceNetworkEvents
 | project Timestamp, RemoteIP, RemoteUrl, InitiatingProcessCommandLine
 ```
 
+![DeviceNetworkEvents](Coming soon)
+
 **Key Findings:**
 
 * Connected to: `34.120.208.123` (Mozilla Telemetry)
@@ -96,10 +102,14 @@ DeviceNetworkEvents
 * **Event:** Detected execution of Firefox Setup with silent install flag
 * **Command:** `cmd.exe /c "Firefox Setup 140.0.2.exe /S"`
 
+![silent firefox installation](Coming soon)
+
 ### 2. Firefox Telemetry Connection
 
 * **Timestamp:** 2025-07-01T02:40:39Z
 * **Event:** Connection to Mozilla telemetry: `34.120.208.123`
+
+![Mozilla telemetry](Coming soon)
 
 ### 3. UBlock Origin Installation Activity
 
@@ -110,12 +120,16 @@ DeviceNetworkEvents
   * `172.66.44.77` (pages.dev)
   * `185.199.111.153` (github.io)
 
+![ublock ip addresses](coming soon)
+
 ### 4. Free Download Manager Activity
 
 * **Timestamp:** 2025-07-01T02:50:59Z
 * **Event:** `fdm_x64_setup.exe` created and executed silently
 * **Connection:** `74.117.181.203`
 * **Deletion of Installer:** 2025-07-01T02:55:37Z
+
+![FDM execution](coming soon)
 
 ---
 
