@@ -9,12 +9,12 @@ A running list of threat hunting scenarios to explore, simulate, or build projec
 - **TOR Browser Usage**  
   Unauthorized use of the TOR browser for anonymous browsing or evasion of web filters.
 
+- **Firefox Installation on Corporate Device**  
+  Detect installation and use of an unapproved browser like Firefox on a managed system.
+
 ---
 
 ## 🔍 In Progress / Next Up
-
-- **Firefox Installation on Corporate Device**  
-  Detect installation and use of an unapproved browser like Firefox on a managed system.
 
 - **Dropbox Data Exfiltration**  
   Large sensitive file uploaded to unauthorized cloud storage (Dropbox).
@@ -22,12 +22,12 @@ A running list of threat hunting scenarios to explore, simulate, or build projec
 - **USB Malware Execution (PowerShell)**  
   A USB device is inserted, running a malicious `Invoke-WebRequest` payload via PowerShell.
 
-- **Chrome Extension Persistence**  
-  Malicious browser extension used to establish backdoor access or maintain persistence.
-
 ---
 
 ## 🛠️ Practical Scenarios to Build
+
+- **Chrome Extension Persistence**  
+  Malicious browser extension used to establish backdoor access or maintain persistence.
 
 - **LOLBins Abuse**  
   User abuses legitimate Windows tools like `certutil.exe` or `mshta.exe` to download and execute a payload.
