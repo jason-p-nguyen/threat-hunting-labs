@@ -25,6 +25,9 @@ A running list of threat hunting scenarios to explore, simulate, or build projec
 - **Remote Desktop Software Installed**  
   User installs AnyDesk/TeamViewer without approval to allow external remote access.
 
+- **Malicious Office Macro Execution Chains**  
+Monitor for Office applications (e.g., `winword.exe`, `excel.exe`) spawning unusual child processes like `powershell.exe` or `cmd.exe`, signaling potential macro-based initial access.
+
 ---
 
 ## 🛠️ Practical Scenarios to Build
@@ -110,9 +113,6 @@ Detect suspicious use of trusted Windows binaries like `certutil.exe`, `mshta.ex
 
 - **Memory Injection via Process Hollowing**  
 Identify behavior where a legitimate process is launched, its memory is hollowed out, and replaced with malicious code. Useful for detecting payload delivery methods used by Cobalt Strike or Mimikatz.
-
-- **Malicious Office Macro Execution Chains**  
-Monitor for Office applications (e.g., `winword.exe`, `excel.exe`) spawning unusual child processes like `powershell.exe` or `cmd.exe`, signaling potential macro-based initial access.
 
 - **Sentinel Workbook – Fileless Attack Dashboard**  
 Build a Microsoft Sentinel dashboard to visualize fileless and memory-based attack behaviors using custom KQL queries. Includes detection stats, geographic logins, and PowerShell trends.
