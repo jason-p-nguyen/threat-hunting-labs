@@ -22,6 +22,9 @@ A running list of threat hunting scenarios to explore, simulate, or build projec
 - **USB Malware Execution (PowerShell)**  
   A USB device is inserted, running a malicious `Invoke-WebRequest` payload via PowerShell.
 
+- **Remote Desktop Software Installed**  
+  User installs AnyDesk/TeamViewer without approval to allow external remote access.
+
 ---
 
 ## 🛠️ Practical Scenarios to Build
@@ -43,9 +46,6 @@ A running list of threat hunting scenarios to explore, simulate, or build projec
 
 - **USB Keylogger or Autorun Attack**  
   Hidden device emulates a keyboard or auto-executes a payload upon insertion.
-
-- **Remote Desktop Software Installed**  
-  User installs AnyDesk/TeamViewer without approval to allow external remote access.
 
 - **Macro-Based Email Attack**  
   Phishing email attachment with macro-enabled Word/Excel file initiating malicious code.
