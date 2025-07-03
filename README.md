@@ -55,7 +55,7 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 🎯 **Focus**: Threat Hunting · Endpoint Telemetry Analysis · Suspicious File & Process Detection · Timeline Reconstruction  
 🧠 **MITRE ATT&CK Techniques**: T1059 · T1036 · T1204  
 📅 **Date**: 2025-06-21  
-📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-project/blob/main/README.md)**
+📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-projects/tree/main/tor_usage)**
 
 ---
 
