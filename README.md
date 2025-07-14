@@ -59,6 +59,16 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 
 ---
 
+## 🧩 Threat Hunting Postmortem: CTF Lurker – Suspicious PowerShell Execution
+
+🛠️ **Tools**: Microsoft Defender for Endpoint (MDE) · KQL · PowerShell · Event Timeline Analysis  
+🎯 **Focus**: Suspicious PowerShell Execution · Threat Hunting Methodology · Investigation Process Review · Lessons Learned  
+🧠 **MITRE ATT&CK Techniques**: T1059.001 (PowerShell) · T1086 (Command and Scripting Interpreter)  
+📅 **Date**: 2025-07-14  
+📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-projects/blob/main/CTF-Lurker)**
+
+---
+
 ## 🧰 Tools Used
 
 - ☁️ Microsoft Azure
