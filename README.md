@@ -69,13 +69,21 @@ I’m Jason. I’m learning threat hunting by getting hands-on with real situati
 
 ---
 
-## 🕵️ Threat Hunt Report: Dropbox Data Exfiltration via Suspicious Insider Activity
+### 🕵️ Threat Hunt Report: Dropbox Data Exfiltration via Suspicious Insider Activity
 
 🛠️ **Tools**: Microsoft Defender for Endpoint (MDE) · KQL · Azure VM · PowerShell
 🎯 **Focus**: Insider Threat Detection · Data Exfiltration via Cloud Apps · Process & File Event Analysis · Response Recommendations  
 🧠 **MITRE ATT&CK Techniques**: T1081 (Credentials in Files) · T1074.001 (Local Data Staging) · T1567.002 (Exfiltration to Cloud Storage)  
-📅 **Date**: 2025-07-12  
+📅 **Date**: 2025-07-19  
 📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-projects/blob/main/dropbox_exfiltration/README.md)**
+
+### 🕵️ Threat Hunt Report: USB Malware Execution via PowerShell
+
+🛠️ **Tools**: Microsoft Defender for Endpoint (MDE) · KQL · PowerShell · Azure VM  
+🎯 **Focus**: Removable Media Threats · PowerShell Malware Execution · Persistence via Scheduled Tasks · Incident Response Recommendations  
+🧠 **MITRE ATT&CK Techniques**: T1059.001 (PowerShell) · T1204.002 (Malicious File) · T1053.005 (Scheduled Task)  
+📅 **Date**: 2025-07-23  
+📄 **[Read Full Report →](https://github.com/jason-p-nguyen/threat-hunting-projects/blob/main/usb_malware_execution/README.md)**
 
 ---
 
